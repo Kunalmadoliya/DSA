@@ -66,19 +66,31 @@ let nums = "abccbaacz";
 // }
 // console.log(ans);
 
-let map = new Map();
+// let map = new Map();
 
-let names = ["Mary", "John", "Emma"];
-let heights = [180, 165, 170];
+// let names = ["Mary", "John", "Emma"];
+// let heights = [180, 165, 170];
 
-for (let i = 0; i < names.length; i++) {
-  map.set(heights[i], names[i]);
+// for (let i = 0; i < names.length; i++) {
+//   map.set(heights[i], names[i]);
 
-  heights.sort((a, b) => b - a);
- 
-  if(map.has(heights))
-  
-}
+//   heights.sort((a, b) => b - a);
+
+//   if(map.has(heights))
+
+// }
+
+// console.log(map);
+
+// const names = ["Alice", "Bob", "Charlie"];
+// const salaries = [5000, 7000, 6000];
+
+// let map = new Map()
 
 
-console.log(map);
+
+//     for( let i = 0 ; i < names.length ;i++){
+//         map.set(salaries[i] , names[i])
+//     }.sort((a))
+//     console.log(map);
+    
