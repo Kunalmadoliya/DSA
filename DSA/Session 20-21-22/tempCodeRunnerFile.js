@@ -1,0 +1,1 @@
+console.log(rp(n,p));
