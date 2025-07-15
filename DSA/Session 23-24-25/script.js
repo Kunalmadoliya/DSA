@@ -123,22 +123,68 @@
 
 // console.log(profit);
 
-let nums = [2, 0, 2, 1, 1, 0];
-let i = 0,
-  j = 0,
-  k = nums.length - 1;
+// let nums = [2, 0, 2, 1, 1, 0];
+// let i = 0,
+//   j = 0,
+//   k = nums.length - 1;
 
-while ( i <= k) {
-  if (nums[i] === 0) {
-    [nums[i], nums[j]] = [nums[j], nums[i]];
-    i++;
-    j++;
-  } else if (nums[i] === 2) {
-    [nums[i], nums[k]] = [nums[k] , nums[i]];
-    k--;
-  } else {
-    i++;
-  }
-}
+// while ( i <= k) {
+//   if (nums[i] === 0) {
+//     [nums[i], nums[j]] = [nums[j], nums[i]];
+//     i++;
+//     j++;
+//   } else if (nums[i] === 2) {
+//     [nums[i], nums[k]] = [nums[k] , nums[i]];
+//     k--;
+//   } else {
+//     i++;
+//   }
+// }
 
-console.log(nums);
+// console.log(nums);
+// let arr = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];
+
+// let leftArr = [],
+//   rightArr = [],
+//   ans = 0,
+//   i = 0,
+//   j = arr.length - 1,
+//   left = -Infinity,
+//   right = -Infinity;
+
+// while (i < arr.length && j >= 0) {
+//   left = Math.max(left, arr[i]);
+//   leftArr.push(left);
+//   i++;
+
+//   right = Math.max(right, arr[j]);
+//   rightArr.push(right);
+//   j--;
+
+
+
+//   ans += Math.min( leftArr[i] , rightArr[j]) - arr[i]
+
+// }
+
+
+
+
+
+// console.log("leftArr:", leftArr);
+// console.log("rightArr:", rightArr);
+// console.log("Total trapped water:", ans);
+
+let height = [1,8,6,2,5,4,8,3,7]
+let i = 0, j = height.length - 1, ans = 0
+
+    while (i < j) {
+        ans = Math.max(ans, Math.min(height[i], height[j]) * Math.abs(height[j] - height[i]))
+        if (height[i] < height[j]) {
+            i++
+        } else {
+            j--
+        }
+    }
+   console.log(ans);
+   
