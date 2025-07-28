@@ -1,0 +1,1 @@
+let i = str.length - 1
