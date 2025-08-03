@@ -1,6 +1,6 @@
 // Understand recursion by print something N times
 
-const { log } = require("console")
+
 
 // function print( n , count = 0){
 //     if(count === n) return
@@ -48,9 +48,7 @@ const { log } = require("console")
 
 // console.log(add(5));
 
-
 // Factorial of N numbers
-
 
 // function fact(n){
 //     if( n <=0) return 1
@@ -59,16 +57,38 @@ const { log } = require("console")
 
 // console.log(fact(5));
 
-
 // Reverse an array
 
+// function rev(arr, first = 0, last = arr.length - 1) {
+//   if (first >= last) return;
+//   [arr[first], arr[last]] = [arr[last], arr[first]];
+//   rev(arr, first + 1, last - 1);
+// }
 
-function rev(arr, first = 0, last = arr.length - 1) {
-  if (first >= last) return;
-  [arr[first], arr[last]] = [arr[last], arr[first]];
-  rev(arr, first + 1, last - 1); 
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// rev(arr);
+// console.log(arr);
+
+
+// function check(arr, n, i = 0) {
+//   if (i >= Math.floor(n / 2)) return true;
+//   if (arr[i] !== arr[n - i - 1]) return false;
+
+//   return check(arr, n, i + 1);
+// }
+
+// let arr = ["m", "a", "d", "a", "m"];
+// console.log(check(arr, arr.length)); 
+
+
+function f( n){
+  if( n <= 1) return n
+
+  let last = f( n - 1)
+  let slast = f(n - 2)
+
+  return last + slast
 }
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8];
-rev(arr);
-console.log(arr); 
+
+console.log(f(6));
