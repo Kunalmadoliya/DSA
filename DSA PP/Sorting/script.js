@@ -1,7 +1,5 @@
 // selection sort
 
-let arr = [64, 25, 12, 22, 11];
-
 // let i = 0;
 
 // while (i < arr.length) {
@@ -42,3 +40,56 @@ let arr = [64, 25, 12, 22, 11];
 //   }
 // }
 // console.log(arr);
+
+// let arr = [9, 12, 6, 14];
+
+// for (let i = 0; i < arr.length; i++) {
+//   let j = i;
+
+//   while (j > 0 && arr[j - 1] > arr[j]) {
+//     let temp = arr[j];
+//     arr[j] = arr[j - 1];
+//     arr[j - 1] = temp;
+//     j--;
+//   }
+// }
+// console.log(arr);
+
+function mergeSort(arr, low, high) {
+if (low >= high) return;
+
+let mid = Math.floor((low + high) / 2);
+mergeSort(arr, low, mid);       
+mergeSort(arr, mid + 1, high);  
+merge(arr, low, mid, high);    
+}
+
+function merge(arr, low, mid, high) {
+let left = low,
+   right = mid + 1,
+   temp = [];
+
+while (left <= mid && right <= high) {
+ if (arr[left] < arr[right]) {
+   temp.push(arr[left++]);
+ } else {
+   temp.push(arr[right++]);
+ }
+}
+
+while (left <= mid) {
+ temp.push(arr[left++]);
+}
+
+while (right <= high) {
+ temp.push(arr[right++]);
+}
+
+for (let i = low; i <= high; i++) {
+ arr[i] = temp[i - low];
+}
+}
+
+let arr = [38, 27, 43, 3, 9, 82, 10];
+mergeSort(arr, 0, arr.length - 1);
+console.log(arr)
