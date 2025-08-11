@@ -1,1 +1,1 @@
-console.log(i);
+arr[arr.length - 1] = temp;

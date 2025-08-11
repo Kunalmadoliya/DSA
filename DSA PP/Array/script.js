@@ -25,15 +25,25 @@
 
 // console.log(max, smax); // 21 7
 
-let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+// let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 
-let i = 1,
-  j = nums.length - 1;
-while (i <= j) {
-  if (nums[i] === nums[i - 1]) {
-    nums[i] = nums[j];
-    i++;
-    j--;
-    console.log(i);
-  }
+// let i = 1,
+//   j = nums.length - 1;
+// while (i <= j) {
+//   if (nums[i] === nums[i - 1]) {
+//     nums[i] = nums[j];
+//     i++;
+//     j--;
+//     console.log(i);
+//   }
+// }.
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+let k = 3;
+
+let temp = arr[0];
+for (let i = 1; i < k; i++) {
+  arr[i] = arr[i - 1];
 }
+arr[arr.length - 1] = temp;
+console.log(arr);
