@@ -1,1 +1,1 @@
-arr[arr.length - 1] = temp;
+j++;
