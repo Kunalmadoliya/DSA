@@ -145,7 +145,7 @@ const {log} = require("node:console");
 
 // console.log(max);
 
-let nums = [1, 2, 1, 2, 4];
+// let nums = [1, 2, 1, 2, 4];
 
 // for (let i = 0; i < nums.length; i++) {
 //   let num = nums[i];
@@ -175,11 +175,30 @@ let nums = [1, 2, 1, 2, 4];
 //   }
 // }
 
-let num = 27;
-let base = 3;
+let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 
-let power = Math.log(num) / Math.log(base);
-let roundedPower = Math.round(power);
+let maxSum = -Infinity;
+let sum = 0;
+let start = 0;
+let ansStart = 0;
+let ansEnd = 0;
 
-console.log(roundedPower); // 3
-console.log(Math.pow(base, roundedPower) === num); // true
+for (let i = 0; i < nums.length; i++) {
+  sum += nums[i];
+
+  
+  if (sum > maxSum) {
+    maxSum = sum;
+    ansStart = start;
+    ansEnd = i;
+  }
+
+  
+  if (sum < 0) {
+    sum = 0;
+    start = i + 1; 
+  }
+}
+
+console.log("Max Sum:", maxSum);
+console.log("Max Subarray:", nums.slice(ansStart, ansEnd + 1));
