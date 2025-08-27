@@ -175,30 +175,142 @@ const {log} = require("node:console");
 //   }
 // }
 
-let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 
-let maxSum = -Infinity;
-let sum = 0;
-let start = 0;
-let ansStart = 0;
-let ansEnd = 0;
+// let maxSum = -Infinity;
+// let sum = 0;
+// let start = 0;
+// let ansStart = 0;
+// let ansEnd = 0;
 
-for (let i = 0; i < nums.length; i++) {
-  sum += nums[i];
+// for (let i = 0; i < nums.length; i++) {
+//   sum += nums[i];
 
-  
-  if (sum > maxSum) {
-    maxSum = sum;
-    ansStart = start;
-    ansEnd = i;
-  }
+//   if (sum > maxSum) {
+//     maxSum = sum;
+//     ansStart = start;
+//     ansEnd = i;
+//   }
 
-  
-  if (sum < 0) {
-    sum = 0;
-    start = i + 1; 
+//   if (sum < 0) {
+//     sum = 0;
+//     start = i + 1;
+//   }
+// }
+
+// console.log("Max Sum:", maxSum);
+// console.log("Max Subarray:", nums.slice(ansStart, ansEnd + 1));
+
+// let nums = [3, 1, -2, -5, 2, 9, -4, 8];
+
+// let positive = [];
+// let negative = [];
+
+// for (let i = 0; i < nums.length; i++) {
+//   if (nums[i] > 0) {
+//     positive.push(nums[i]);
+//   } else {
+//     negative.push(nums[i]);
+//   }
+// }
+
+// let p = 0,
+//   n = 0;
+
+// for (let i = 0; i < nums.length; i++) {
+//   if (i % 2 === 0 && p < positive.length) {
+//     nums[i] = positive[p++];
+//   } else if (i % 2 === 1 && n < negative.length) {
+//     nums[i] = negative[n++];
+//   }
+// }
+
+// while (p < positive.length) {
+//   nums.push(positive[p++]);
+// }
+
+// while (n < negative.length) {
+//   nums.push(negative[n++]);
+// }
+
+// console.log(nums);
+
+// let nums = [ 10,22,12,3,0,6]
+// let max = []
+// let maxNum = 0
+// for( let i = nums.length - 1 ; i >= 0 ;i--){
+//   if( nums[i] > maxNum){
+//     max.push(maxNum)
+//     maxNum = nums[i]
+//   }
+//   maxNum = Math.max( maxNum , nums[i])
+
+// }
+
+// console.log(max);
+
+// let matrix = [
+//   [0, 1, 2, 0],
+//   [3, 4, 5, 2],
+//   [1, 3, 1, 5],
+// ];
+
+// for (let i = 0; i < matrix.length; i++) {
+//   for (let j = 0; j < matrix[i].length; j++) {
+//     if (matrix[i][j] === 0) {
+//       markRow(i);
+//       markCol(j);
+//     }
+//   }
+// }
+// function markRow(i) {
+//   for (let j = 0; j < matrix[i].length; j++) {
+//     if (matrix[i][j] != 0) {
+//       matrix[i][j] = -1;
+//     }
+//   }
+// }
+
+// function markCol(j) {
+//   for (let i = 0; i < matrix.length; i++) {
+//     if (matrix[i][j] != 0) {
+//       matrix[i][j] = -1;
+//     }
+//   }
+// }
+
+// for (let i = 0; i < matrix.length; i++) {
+//   for (let j = 0; j < matrix[i].length; j++) {
+//     if( matrix[i][j] === -1){
+//       matrix[i][j] = 0
+//     }
+//   }
+// }
+// console.log(matrix);
+
+let nums = [4, 3, 2, 7, 8, 2, 3, 1];
+let arr= []
+
+let i = 0;
+while (i < nums.length) {
+  let currentIdx = nums[i] -1;
+
+  if ( nums[i] != nums[currentIdx]) {
+    swap(nums, i, currentIdx);
+  } else {
+    i++;
   }
 }
 
-console.log("Max Sum:", maxSum);
-console.log("Max Subarray:", nums.slice(ansStart, ansEnd + 1));
+for( let j = 1 ; j < nums.length ; j++){
+  if( j !== nums[j]){
+    arr.push(j)
+  }
+}
+function swap(nums, a, b) {
+  let temp = nums[a];
+  nums[a] = nums[b];
+  nums[b] = temp;
+}
+
+console.log(nums);
